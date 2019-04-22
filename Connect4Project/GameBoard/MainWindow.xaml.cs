@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Cheyenne Hale, Aaron Schmidt, Brendan Taylor
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,18 @@ namespace GameBoard
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            BoardPieces play1 = new BoardPieces();
+            play1.Player1Name = txtPlayer1Input.Text;
+            play1.Player2Name = txtPlayer2Input.Text;
 
+
+
+        }
+
+        private void btnReady_Click(object sender, RoutedEventArgs e)
+        {
+            string name = txtPlayer1Input.Text;
+          
         }
     }
 }

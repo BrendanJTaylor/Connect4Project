@@ -10,7 +10,8 @@ namespace GameBoard
     {
         public string Picture { get; set; }
         public string Color { get; set; }
-        public string Name { get; set; }
+        public string Player1Name { get; set; }
+        public string Player2Name { get; set; }
 
     }
 }

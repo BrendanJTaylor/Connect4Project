@@ -30,10 +30,12 @@
         <TextBox x:Name="txtPlayer1Input" Grid.Column="7" HorizontalAlignment="Left" Height="23" Margin="91.8,14,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtPlayer2Input" Grid.Column="7" HorizontalAlignment="Left" Height="23" Margin="91.8,37,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblPlayer2" Content="Enter Player 2" Grid.Column="6" HorizontalAlignment="Left" Margin="91,34,0,0" Grid.Row="1" VerticalAlignment="Top" Width="90" Height="35" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <Button Content="Begin!" Grid.Column="7" HorizontalAlignment="Left" Margin="14.8,10.2,0,0" Grid.Row="2" VerticalAlignment="Top" Width="174" Height="46" FontSize="24" FontWeight="Bold" FontStyle="Italic" Click="Button_Click"/>
-        <Image x:Name="imgAdam" Grid.Column="7" HorizontalAlignment="Left" Height="70" Margin="15,0,0,0" Grid.Row="4" VerticalAlignment="Top" Width="81" Source="C:\Users\hale4484\Desktop\tokenAdam.png"/>
-        <Image x:Name="imgTim" Grid.Column="7" HorizontalAlignment="Left" Height="70" Margin="130,0,0,0" Grid.Row="4" VerticalAlignment="Top" Width="81" Source="C:\Users\hale4484\Desktop\tokenTim.png" />
-        <Label Content="Choose your fighter&#xD;&#xA;" Grid.Column="7" HorizontalAlignment="Left" Margin="48,34,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+        <Button Content="Begin!" Grid.Column="7" HorizontalAlignment="Left" Margin="19,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="174" Height="46" FontSize="24" FontWeight="Bold" FontStyle="Italic" Click="Button_Click"/>
+        <Image x:Name="imgAdam" Grid.Column="7" HorizontalAlignment="Left" Height="70" Margin="19,0,0,0" Grid.Row="4" VerticalAlignment="Top" Width="81" Source="C:\Users\hale4484\Desktop\Tokens\tokenAdam.png"/>
+        <Image x:Name="imgTim" Grid.Column="7" HorizontalAlignment="Left" Height="70" Margin="132,0,0,0" Grid.Row="4" VerticalAlignment="Top" Width="81" Source="C:\Users\hale4484\Desktop\Tokens\tokenTim.png" />
+        <Label Content="Choose your fighter&#xD;&#xA;" Grid.Column="7" HorizontalAlignment="Left" Margin="58,39,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Label x:Name="lblNameofPlayer" Content="" Grid.Column="7" HorizontalAlignment="Left" Margin="59,10,0,0" Grid.Row="3" VerticalAlignment="Top" Height="27" Width="114"/>
+        <Button x:Name="btnReady" Content="Ready?" Grid.Column="7" HorizontalAlignment="Left" Margin="58,24,0,0" Grid.Row="2" VerticalAlignment="Top" Width="114" Height="36" FontSize="18" Click="btnReady_Click"/>
 
     </Grid>
 </Window>
