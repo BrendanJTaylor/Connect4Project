@@ -32,13 +32,21 @@ namespace GameBoard
             play1.Player1Name = txtPlayer1Input.Text;
             play1.Player2Name = txtPlayer2Input.Text;
 
+            //player1 goes, insert into lblNameofPlayer
 
-
+            
         }
 
         private void btnReady_Click(object sender, RoutedEventArgs e)
         {
             string name = txtPlayer1Input.Text;
+            lblNameofPlayer.Content = name;
+
+            /*if (MouseDownEvent(imgCat))
+            {
+
+
+            }*/
           
         }
     }
