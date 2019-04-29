@@ -24,6 +24,11 @@ namespace GameBoard
         public MainWindow()
         {
             InitializeComponent();
+
+            imgDog.Visibility = Visibility.Collapsed;
+            imgCat.Visibility = Visibility.Collapsed;
+            lblFighter.Visibility = Visibility.Collapsed;
+            btnBegin.Visibility = Visibility.Collapsed;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,6 +36,10 @@ namespace GameBoard
             BoardPieces play1 = new BoardPieces();
             play1.Player1Name = txtPlayer1Input.Text;
             play1.Player2Name = txtPlayer2Input.Text;
+
+            
+            
+            
 
             //player1 goes, insert into lblNameofPlayer
 
@@ -42,11 +51,13 @@ namespace GameBoard
             string name = txtPlayer1Input.Text;
             lblNameofPlayer.Content = name;
 
-            /*if (MouseDownEvent(imgCat))
-            {
+            imgCat.Visibility = Visibility.Visible;
+            imgDog.Visibility = Visibility.Visible;
+            lblFighter.Visibility = Visibility.Visible;
+            btnBegin.Visibility = Visibility.Visible;
+            
 
 
-            }*/
           
         }
     }

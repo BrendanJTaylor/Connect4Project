@@ -5,12 +5,6 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBoard", "GameBoard\GameBoard.csproj", "{65FED8B7-68B6-4169-9CDB-3687C4CEB107}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tokens", "Tokens", "{B94E90C6-88DC-4936-98FA-C72F1943306A}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Desktop\3033 Cheyenne Hale\Tokens\tokenAdam.PNG = ..\..\..\..\Desktop\3033 Cheyenne Hale\Tokens\tokenAdam.PNG
-		..\..\..\..\Desktop\3033 Cheyenne Hale\Tokens\tokenTim.PNG = ..\..\..\..\Desktop\3033 Cheyenne Hale\Tokens\tokenTim.PNG
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
