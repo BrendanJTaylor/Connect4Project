@@ -39,6 +39,7 @@ namespace GameBoard
             imgDog.Visibility = Visibility.Collapsed;
             imgCat.Visibility = Visibility.Collapsed;
             btnBegin.Visibility = Visibility.Collapsed;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -50,7 +51,8 @@ namespace GameBoard
             //When click "Begin" button, becomes true
             begin = true;
 
-            txtTurn.Text = "Player 1's turn";//game starts with saying that it is player 1's turn and then after every row click would change to player 2 to and back to player 1
+            lblTurn.Content = txtPlayer1Input.Text + "'s Turn";
+
 
 
 
@@ -131,8 +133,18 @@ namespace GameBoard
             }
         }
 
-        private void placePiece(int col)
+
+        public void placePiece(int col)
         {
+            if (turn == true)
+            {
+                lblTurn.Content = txtPlayer1Input.Text + "'s Turn";
+            }
+            else
+            {
+                lblTurn.Content = txtPlayer2Input.Text + "'s Turn";
+            }
+
             string url;
 
             if (turn == false)
@@ -145,6 +157,8 @@ namespace GameBoard
             }
 
             setGridCell(createImage(url, 60, 60), 0, col - 1);
+
+            
 
             turn = !turn;
         }
@@ -180,30 +194,30 @@ namespace GameBoard
             mainWindow.Children.Add(img);
         }
 
-        private void PickAWinner(int a, int b, int c, int d)
-        {
-            if (play1[a] == play1[b] && play1[a] == play1[c] && play1[a] == play1[d])
-            {
-                if (play1[a] == player1URL)
-                {
-                    txtPlayer1Input.Text = "Player1 is the winner";
-                    txtPlayer2Input.Text = "";
-                }
-                else
-                {
-                    txtPlayer1Input.Text = "";
-                    txtPlayer2Input.Text = "Player2 is the winner";
+        //private void PickAWinner(int a, int b, int c, int d)
+        //{
+        //    if (play1[a] == play1[b] && play1[a] == play1[c] && play1[a] == play1[d])
+        //    {
+        //        if (play1[a] == player1URL)
+        //        {
+        //            txtPlayer1Input.Text = "Player1 is the winner";
+        //            txtPlayer2Input.Text = "";
+        //        }
+        //        else
+        //        {
+        //            txtPlayer1Input.Text = "";
+        //            txtPlayer2Input.Text = "Player2 is the winner";
 
-                }
-            }
-
-
+        //        }
+        //    }
 
 
 
 
 
 
-        }
+
+
+        //}
     }
 }
