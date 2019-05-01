@@ -30,6 +30,8 @@ namespace GameBoard
         //created boolean for when true, you can start clicking column buttons
         private bool begin = false;
 
+        BoardPieces[] play1 = new BoardPieces[42];
+
         public MainWindow()
         {
             InitializeComponent();
@@ -48,7 +50,10 @@ namespace GameBoard
             //When click "Begin" button, becomes true
             begin = true;
 
-            
+            txtTurn.Text = "Player 1's turn";//game starts with saying that it is player 1's turn and then after every row click would change to player 2 to and back to player 1
+
+
+
         }
 
         private void btnReady_Click(object sender, RoutedEventArgs e)
@@ -65,17 +70,13 @@ namespace GameBoard
             lblNameofPlayer1.Visibility = Visibility.Visible;
             lblNameofPlayer2.Visibility = Visibility.Visible;
             btnBegin.Visibility = Visibility.Visible;
-            
-
-
-          
         }
 
 
         //each column button click creates image action in column
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            if(begin == true)
+            if (begin == true)
             {
                 placePiece(1);
             }
@@ -152,14 +153,14 @@ namespace GameBoard
         private Image createImage(string url, int width, int height)
         {
             //Source from: https://stackoverflow.com/questions/350027/setting-wpf-image-source-in-code
-            
+
             BitmapImage source = new BitmapImage();
 
             Image image = new Image();
             image.Width = width;
             image.Height = height;
 
-             
+
             source.BeginInit();
             source.UriSource = new Uri(url);
             source.EndInit();
@@ -170,6 +171,7 @@ namespace GameBoard
         }
 
 
+
         private void setGridCell(Image img, int row, int col)
         {
             //Source from: https://stackoverflow.com/questions/16742262/adding-image-to-grid-c-sharp    
@@ -178,6 +180,30 @@ namespace GameBoard
             mainWindow.Children.Add(img);
         }
 
-        
+        private void PickAWinner(int a, int b, int c, int d)
+        {
+            if (play1[a] == play1[b] && play1[a] == play1[c] && play1[a] == play1[d])
+            {
+                if (play1[a] == player1URL)
+                {
+                    txtPlayer1Input.Text = "Player1 is the winner";
+                    txtPlayer2Input.Text = "";
+                }
+                else
+                {
+                    txtPlayer1Input.Text = "";
+                    txtPlayer2Input.Text = "Player2 is the winner";
+
+                }
+            }
+
+
+
+
+
+
+
+
+        }
     }
 }
