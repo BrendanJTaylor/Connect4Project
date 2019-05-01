@@ -18,12 +18,33 @@ namespace GameBoard
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
+    /// 
     /// </summary>
+
+
     public partial class MainWindow : Window
     {
         //create the boolean turn. When false its player1/when true its player2 so don't need a loop for turns
         //created two string images for the turns. 
         private bool turn = false;
+        //counters that will track where the picture will go (row location)
+        private int click1count = 5;
+        private int click2count = 5;
+        private int click3count = 5;
+        private int click4count = 5;
+        private int click5count = 5;
+        private int click6count = 5;
+        private int click7count = 5;
+        //set value to use for finding a winner
+        private enum value
+        {
+            Empty,
+            P1,
+            P2
+        }
+
+        private value[,] cells = new value[7, 6];
+  
         private string player1URL = "https://cdn.pixabay.com/photo/2018/09/22/03/34/cat-3694498_960_720.jpg";
         private string player2URL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIMuT2ZSGbTNDGdg7juXsLfebQGYfmyXhg1ygFUYq3LrXhexBeJA";
 
@@ -75,13 +96,26 @@ namespace GameBoard
         }
 
 
-        //each column button click creates image action in column
+        //each column button click creates image action in column 
+        //once an image is placed the next will stack on top
+        //if the stack is full it will give a message saying so
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
+                                   
             if (begin == true)
             {
-                placePiece(1);
+                if (click1count >= 0)
+                {
+                    placePiece(1, click1count);
+
+                }
+                else
+                {
+                    MessageBox.Show("Colum is full, you will not be able to place additional pieces here");
+                }
+                click1count--;
             }
+                        
 
         }
 
@@ -89,7 +123,16 @@ namespace GameBoard
         {
             if (begin == true)
             {
-                placePiece(2);
+                if (click2count >= 0)
+                {
+                    placePiece(2, click2count);
+
+                }
+                else
+                {
+                    MessageBox.Show("Colum is full, you will not be able to place additional pieces here");
+                }
+                click2count--;
             }
         }
 
@@ -97,7 +140,16 @@ namespace GameBoard
         {
             if (begin == true)
             {
-                placePiece(3);
+                if (click3count >= 0)
+                {
+                    placePiece(3, click3count);
+
+                }
+                else
+                {
+                    MessageBox.Show("Colum is full, you will not be able to place additional pieces here");
+                }
+                click3count--;
             }
         }
 
@@ -105,7 +157,16 @@ namespace GameBoard
         {
             if (begin == true)
             {
-                placePiece(4);
+                if (click4count >= 0)
+                {
+                    placePiece(4, click4count);
+
+                }
+                else
+                {
+                    MessageBox.Show("Colum is full, you will not be able to place additional pieces here");
+                }
+                click4count--;
             }
         }
 
@@ -113,7 +174,16 @@ namespace GameBoard
         {
             if (begin == true)
             {
-                placePiece(5);
+                if (click5count >= 0)
+                {
+                    placePiece(5, click5count);
+
+                }
+                else
+                {
+                    MessageBox.Show("Colum is full, you will not be able to place additional pieces here");
+                }
+                click5count--;
             }
         }
 
@@ -121,7 +191,18 @@ namespace GameBoard
         {
             if (begin == true)
             {
-                placePiece(6);
+               
+                
+                if (click6count >= 0)
+                {
+                    placePiece(6, click6count);
+
+                }
+                else
+                {
+                    MessageBox.Show("Colum is full, you will not be able to place additional pieces here");
+                }
+                click6count--;
             }
         }
 
@@ -129,12 +210,22 @@ namespace GameBoard
         {
             if (begin == true)
             {
-                placePiece(7);
+                if (click7count >= 0)
+                {
+                    placePiece(7, click7count);
+
+                }
+                else
+                {
+                    MessageBox.Show("Colum is full, you will not be able to place additional pieces here");
+                }
+                click7count--;
+
             }
         }
 
 
-        public void placePiece(int col)
+        public void placePiece(int col,int row)
         {
             if (turn == true)
             {
@@ -156,11 +247,69 @@ namespace GameBoard
                 url = player2URL;
             }
 
-            setGridCell(createImage(url, 60, 60), 0, col - 1);
-
             
+            setGridCell(createImage(url, 60, 60), row, col - 1);
+
+            updateMatrix(row, col -1, turn);
+
+            CheckHorizontal(row, col -1);
 
             turn = !turn;
+        }
+
+        private void CheckHorizontal(int row, int col)
+        {
+            int search = (int)cells[col, row];
+
+            //Horizontal Right
+            if(col <= 3 && search == (int)cells[col + 1, row] && search == (int)cells[col+ 2, row] && search == (int)cells [col +3, row])
+            {
+                MessageBox.Show("Winner!");
+
+            }
+            //Horizontal Left
+            if (col >= 3 && search == (int)cells[col - 1, row] && search == (int)cells[col - 2, row] && search == (int)cells[col - 3, row])
+            {
+                MessageBox.Show("Winner!");
+            }
+            //Vertical up
+            if (row >= 3 && search == (int)cells[col, row -1] && search == (int)cells[col, row -2] && search == (int)cells[col , row -3])
+            {
+                MessageBox.Show("Winner!");
+            }
+            //Vertical Down
+            if (row <= 2 && search == (int)cells[col, row + 1] && search == (int)cells[col, row +2] && search == (int)cells[col , row +3])
+            {
+                MessageBox.Show("Winner!");
+            }
+            // cgane starting calue and how many addition coll/row needed
+            //Diagonal Bottom Right
+
+            if (col <= 3 && row <= 3 && search == (int)cells[col + 1, row + 1] && search == (int)cells[col + 2, row + 2] && search == (int)cells[col + 3, row + 3])
+            {
+                MessageBox.Show("Winner!");
+            }
+            //Diagonal Bottom Left
+            if (col >= 3 && row >= 3 && search == (int)cells[col - 1, row - 1] && search == (int)cells[col - 2, row - 2] && search == (int)cells[col - 3, row - 3])
+            {
+                MessageBox.Show("Winner!");
+            }
+
+
+        }
+
+        private void updateMatrix(int row, int col, bool turn)
+        {
+            
+            if (turn == false)
+            {
+                cells[col, row] = value.P1;
+            }
+            else
+            {
+                cells[col, row] = value.P2;
+            }
+
         }
 
         //Adding an image to the grid
@@ -200,13 +349,11 @@ namespace GameBoard
         //    {
         //        if (play1[a] == player1URL)
         //        {
-        //            txtPlayer1Input.Text = "Player1 is the winner";
-        //            txtPlayer2Input.Text = "";
+        //            messagebox.text("Player 1 is the winner!)
         //        }
         //        else
         //        {
-        //            txtPlayer1Input.Text = "";
-        //            txtPlayer2Input.Text = "Player2 is the winner";
+        //            messagebox.text("player 2 is the winner!)
 
         //        }
         //    }
