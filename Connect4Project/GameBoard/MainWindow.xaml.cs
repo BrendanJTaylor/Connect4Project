@@ -63,8 +63,8 @@ namespace GameBoard
             //player names become visible when ready button is clicked
             string name = txtPlayer1Input.Text;
             string name2 = txtPlayer2Input.Text;
-            lblNameofPlayer1.Content = name;
-            lblNameofPlayer2.Content = name2;
+            lblNameofPlayer1.Content = name + " Coin";
+            lblNameofPlayer2.Content = name2 + " Coin";
 
             //images and names become visible when ready
             imgCat.Visibility = Visibility.Visible;
