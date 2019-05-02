@@ -352,11 +352,12 @@ namespace GameBoard
         //reset board and ready to play
         private void BtnReset_Click(object sender, RoutedEventArgs e)
         {
-            
+
             
             BoardPieces[] play1 = new BoardPieces[42];
+           
 
-             click1count = 5;
+            click1count = 5;
              click2count = 5;
              click3count = 5;
              click4count = 5;
