@@ -260,26 +260,30 @@ namespace GameBoard
         private void CheckHorizontal(int row, int col)
         {
             int search = (int)cells[col, row];
-
+            // declares a winner and prevents additional piece placement
             //Horizontal Right
             if(col <= 3 && search == (int)cells[col + 1, row] && search == (int)cells[col+ 2, row] && search == (int)cells [col +3, row])
             {
+                begin = false;
                 MessageBox.Show("Winner!");
 
             }
             //Horizontal Left
             if (col >= 3 && search == (int)cells[col - 1, row] && search == (int)cells[col - 2, row] && search == (int)cells[col - 3, row])
             {
+                begin = false;
                 MessageBox.Show("Winner!");
             }
             //Vertical up
             if (row >= 3 && search == (int)cells[col, row -1] && search == (int)cells[col, row -2] && search == (int)cells[col , row -3])
             {
+                begin = false;
                 MessageBox.Show("Winner!");
             }
             //Vertical Down
             if (row <= 2 && search == (int)cells[col, row + 1] && search == (int)cells[col, row +2] && search == (int)cells[col , row +3])
             {
+                begin = false;
                 MessageBox.Show("Winner!");
             }
             // cgane starting calue and how many addition coll/row needed
@@ -287,11 +291,13 @@ namespace GameBoard
 
             if (col <= 3 && row <= 3 && search == (int)cells[col + 1, row + 1] && search == (int)cells[col + 2, row + 2] && search == (int)cells[col + 3, row + 3])
             {
+                begin = false;
                 MessageBox.Show("Winner!");
             }
             //Diagonal Bottom Left
             if (col >= 3 && row >= 3 && search == (int)cells[col - 1, row - 1] && search == (int)cells[col - 2, row - 2] && search == (int)cells[col - 3, row - 3])
             {
+                begin = false;
                 MessageBox.Show("Winner!");
             }
 
@@ -343,6 +349,26 @@ namespace GameBoard
             mainWindow.Children.Add(img);
         }
 
+        //reset board and ready to play
+        private void BtnReset_Click(object sender, RoutedEventArgs e)
+        {
+            
+            
+            BoardPieces[] play1 = new BoardPieces[42];
+
+             click1count = 5;
+             click2count = 5;
+             click3count = 5;
+             click4count = 5;
+             click5count = 5;
+             click6count = 5;
+             click7count = 5;
+
+            
+            begin = true;
+
+
+        }
         //private void PickAWinner(int a, int b, int c, int d)
         //{
         //    if (play1[a] == play1[b] && play1[a] == play1[c] && play1[a] == play1[d])
