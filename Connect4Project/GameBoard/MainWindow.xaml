@@ -27,13 +27,13 @@
             <ColumnDefinition Width="222*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Welcome to ConnectFour&#xD;&#xA;&#x9;Xtreme" Grid.Column="7" HorizontalAlignment="Center" Margin="9.8,10,0,0" VerticalAlignment="Center" Height="46" Width="202" FontWeight="Bold" FontSize="14" FontStyle="Italic"/>
-        <Label x:Name="lblPlayer1" Content="Enter Player 1" Grid.Column="7" HorizontalAlignment="Left" Margin="9.5,1,0,0" Grid.Row="1" VerticalAlignment="Top" Width="90" Height="24"/>
+        <Label x:Name="lblPlayer1" Content="Player 1" Grid.Column="7" HorizontalAlignment="Left" Margin="9.5,1,0,0" Grid.Row="1" VerticalAlignment="Top" Width="90" Height="24"/>
         <TextBox x:Name="txtPlayer1Input" Grid.Column="7" HorizontalAlignment="Left" Height="23" Margin="92.5,2,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtPlayer2Input" Grid.Column="7" HorizontalAlignment="Left" Height="23" Margin="92.5,30,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnBegin" Content="Begin!" Grid.Column="7" HorizontalAlignment="Left" Margin="19,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="174" Height="46" FontSize="24" FontWeight="Bold" FontStyle="Italic" Click="Button_Click"/>
+        <Button x:Name="btnBegin" Content="Click to Begin!" Grid.Column="7" HorizontalAlignment="Left" Margin="33.4,6.2,0,0" Grid.Row="5" VerticalAlignment="Top" Width="174" Height="46" FontSize="24" FontWeight="Bold" FontStyle="Italic" Click="Button_Click"/>
         <Image x:Name="imgCat" Grid.Column="7" HorizontalAlignment="Left" Height="60" Margin="19,0,0,0" Grid.Row="4" VerticalAlignment="Top" Width="81" Source="https://cdn.pixabay.com/photo/2018/09/22/03/34/cat-3694498_960_720.jpg"/>
         <Image x:Name="imgDog" Grid.Column="7" HorizontalAlignment="Left" Height="60" Margin="132,0,0,0" Grid.Row="4" VerticalAlignment="Top" Width="81" Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIMuT2ZSGbTNDGdg7juXsLfebQGYfmyXhg1ygFUYq3LrXhexBeJA" />
-        <Label x:Name="lblNameofPlayer1" Content="" Grid.Column="7" HorizontalAlignment="Left" Margin="18.5,11,0,0" Grid.Row="3" VerticalAlignment="Top" Height="27" Width="81"/>
+        <Label x:Name="lblNameofPlayer1" Content="" Grid.Column="7" HorizontalAlignment="Left" Margin="10.4,10.8,0,0" Grid.Row="3" VerticalAlignment="Top" Height="27" Width="101"/>
         <Button x:Name="btnReady" Content="Ready?" Grid.Column="7" HorizontalAlignment="Center" Margin="56.5,8,53,10" Grid.Row="2" VerticalAlignment="Center" Width="114" Height="36" FontSize="18" Click="btnReady_Click"/>
         <Button x:Name="btn7" Grid.ColumnSpan="2" Content="7" HorizontalAlignment="Left" Height="27" Margin="80,-93,0,0" VerticalAlignment="Top" Width="81" Grid.Column="5" Click="Btn7_Click"/>
         <Button x:Name="btn6" Grid.ColumnSpan="2" Content="6" HorizontalAlignment="Left" Height="27" Margin="80.5,-93,0,0" VerticalAlignment="Top" Width="81" Grid.Column="4" Click="Btn6_Click"/>
@@ -42,10 +42,10 @@
         <Button x:Name="btn3" Grid.ColumnSpan="2" Content="3" HorizontalAlignment="Left" Height="27" Margin="1,-93,0,0" VerticalAlignment="Top" Width="81" Grid.Column="2" Click="Btn3_Click"/>
         <Button x:Name="btn2" Grid.ColumnSpan="2" Content="2" HorizontalAlignment="Left" Height="27" Margin="1.5,-93,0,0" VerticalAlignment="Top" Width="81" Grid.Column="1" Click="Btn2_Click"/>
         <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Height="27" Margin="2,-93,0,0" VerticalAlignment="Top" Width="81" Grid.ColumnSpan="2" Click="Btn1_Click"/>
-        <Label x:Name="lblTurn" Content="" Grid.Column="7" HorizontalAlignment="Left" Height="27" Margin="19,-93,0,0" VerticalAlignment="Top" Width="174" FontSize="22" FontWeight="Bold"/>
-        <Label x:Name="lblNameofPlayer2" Content="" Grid.Column="7" HorizontalAlignment="Left" Margin="130.5,11,0,0" Grid.Row="3" VerticalAlignment="Top" Height="27" Width="81"/>
-        <Label x:Name="lblPlayer2" Content="Enter Player 2" Grid.Column="7" HorizontalAlignment="Left" Margin="9.5,29,0,0" Grid.Row="1" VerticalAlignment="Top" Width="90" Height="24"/>
-        <Button x:Name="btnReset" Content="Play Again" Grid.Column="7" HorizontalAlignment="Left" Margin="33,-61,0,0" VerticalAlignment="Top" Width="160" Height="42" Click="BtnReset_Click"/>
+        <Label x:Name="lblTurn" Content="" Grid.Column="7" HorizontalAlignment="Left" Height="47" Margin="19.4,-93,0,0" VerticalAlignment="Top" Width="193" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="lblNameofPlayer2" Content="" Grid.Column="7" HorizontalAlignment="Left" Margin="116.4,10.8,0,0" Grid.Row="3" VerticalAlignment="Top" Height="27" Width="101"/>
+        <Label x:Name="lblPlayer2" Content="Player 2" Grid.Column="7" HorizontalAlignment="Left" Margin="9.5,29,0,0" Grid.Row="1" VerticalAlignment="Top" Width="90" Height="24"/>
+        <Button x:Name="btnReset" Content="Play Again" Grid.Column="7" HorizontalAlignment="Left" Margin="33.4,-41,0,0" VerticalAlignment="Top" Width="160" Height="22" Click="BtnReset_Click"/>
 
     </Grid>
 </Window>

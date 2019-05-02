@@ -352,7 +352,7 @@ namespace GameBoard
         //reset board and ready to play
         private void BtnReset_Click(object sender, RoutedEventArgs e)
         {
-
+           //need to clear board, cannot figure out. keeps clearing all content.
             
             BoardPieces[] play1 = new BoardPieces[42];
            
